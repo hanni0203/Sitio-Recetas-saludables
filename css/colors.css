@@ -1,0 +1,18 @@
+:root{
+    --color-primary: #F9B872;
+    --color-primary-light: #FAE7A5;
+    --color-orange: #f73e10;
+    --color-orange-light: #ff7d28;
+
+    --color-secondary: #B6E1E7;
+
+    --color-gray-light: #f1f1f1;
+    --color-gray: #ccc;
+    --color-gray-dark: #333;
+
+    --color-green: #afff33;
+
+    --color-black: black;
+
+    --menu_text_hover_color: #ff6300;
+}

@@ -1,0 +1,28 @@
+.contenedor {
+    width: 90%;
+    max-width: 1400px;
+    margin: auto;
+    padding: 30px;
+    text-align: center;
+    /* border: 2px solid red; */
+    
+  }
+  
+  
+.busqueda{
+  width: 600px;
+  height: 40px;
+  line-height: 40px;
+  background-color: var(--color-gray-light);
+  border-radius: 100px;
+  border: none;
+  text-align: center;
+  font-size: 16px;
+}
+
+.contenedor form{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}

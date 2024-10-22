@@ -1,0 +1,46 @@
+@import "colors.css";
+@import "common.css";
+@import "header.css";
+@import "navbar.css";
+@import "normalize.css";
+@import "contenedor.css";
+
+#recetas-container {
+    /* border: 2px solid rgb(231, 226, 226); */
+    height: 1500px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 20px;
+    width: 100%;
+    align-content: center;
+    padding: 10px;
+    margin-top: 40px;
+  }
+
+  .receta {
+    position: relative; /* Posiciona el div para el pseudo-elemento */
+    height: 200px;
+    width: 250px;
+    border: none;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.3);
+    transition: opacity 0.3s ease; /* Suaviza la transición */
+  }
+
+  .receta {
+    transition: transform 0.4s ease; /* Suaviza la transición */
+  }
+
+  .receta.zoom {
+    border-radius: 15px;
+    transform: scale(1.1); /* Aumenta el tamaño de la imagen */
+    transition: all 1s;
+  }
+
+  
+  
+  
