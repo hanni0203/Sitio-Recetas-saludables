@@ -130,38 +130,48 @@ const recetas = [
 ];
 
 
-// capturando la etiqueta con id  'recetas-container'
-const container = document.getElementById('recetas-container');
 
-//se recorre el array recetas para crear la etiqueta div con classname receta con todas las imagenes
-recetas.forEach(receta => {
-    const divReceta = document.createElement('div');
-    divReceta.className = 'receta';
+//funcion receta por categoría
+function mostrarRecetasPorCategoria (categoria){
+    const container = document.getElementById('recetas-container');
 
-    // Generar una altura aleatoria entre 200px y 400px
-    const alturaAleatoria = Math.floor(Math.random() * (400 - 200 + 1)) + 200;
-    divReceta.style.height = `${alturaAleatoria}px`;
-    divReceta.style.backgroundImage = `url(${receta.url})`;
+    container.innerHTML = ''; // Limpiar el contenedor antes de agregar nuevas recetas
 
-    container.appendChild(divReceta);
-});
+    const recetasporcategoria = recetas.filter( receta => receta.categoria == categoria); // filtrar por categoria
 
+    console.log(recetasporcategoria)
 
-// se selecciona todas las etiquetas con clase .tarjeta//
-const recetass = document.querySelectorAll('.receta');
-//console.log(tarjetas);
-
-//se recorre el array y se 
-recetass.forEach(receta => {
-    // Agrega evento mouseover para ampliar la imagen
-    receta.addEventListener('mouseover', () => {
-        receta.classList.add('zoom');
+    recetasporcategoria.forEach(receta => {
+        const divReceta = document.createElement('div');
+        divReceta.className = 'receta';
+    
+        // Generar una altura aleatoria entre 200px y 400px
+        const alturaAleatoria = Math.floor(Math.random() * (400 - 200 + 1)) + 200;
+        divReceta.style.height = `${alturaAleatoria}px`;
+        divReceta.style.backgroundImage = `url(${receta.url})`;
+    
+        container.appendChild(divReceta);
     });
 
-    // Agrega evento mouseout para restaurar la imagen
-    receta.addEventListener('mouseout', () => {
-        receta.classList.remove('zoom');
-    });
+}
+
+// Event listeners para los enlaces
+document.getElementById('libre gluten').addEventListener('click', (e) => {
+    e.preventDefault();
+    mostrarRecetasPorCategoria('libre gluten');
 });
 
+document.getElementById('receta nutritiva').addEventListener('click', (e) => {
+    e.preventDefault();
+    mostrarRecetasPorCategoria('receta nutritiva');
+});
 
+document.getElementById('desayuno').addEventListener('click', (e) => {
+    e.preventDefault();
+    mostrarRecetasPorCategoria('Desayuno');
+});
+
+document.getElementById('postres free sugar').addEventListener('click', (e) => {
+    e.preventDefault();
+    mostrarRecetasPorCategoria('postres free sugar');
+});
